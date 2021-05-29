@@ -8,10 +8,9 @@
   --box-shadow: none;
 }
 
-
 .menu {
   background-color: rgb(21, 101, 192);
-  height: 60px;
+  height: 65px;
 }
 
 .menubutton {
@@ -34,6 +33,7 @@
   height: 68px;
   margin-left: -6px;
 }
+
 .ion-icon-menu {
   font-size: 55px;
   --ionicon-stroke-width: 45px;
@@ -46,4 +46,21 @@
   height: 80px;
   margin-bottom: -8px;
   margin-left: -12px;
+}
+
+.menuclose {
+  font-size: 40px;
+  color: white;
+}
+
+.sidemenu{
+  color: white;
+  height: 64px;
+ --background: rgb(21, 101, 192);
+}
+
+.sidemenuoptions{
+
+margin-top: 40px;
+
 }
