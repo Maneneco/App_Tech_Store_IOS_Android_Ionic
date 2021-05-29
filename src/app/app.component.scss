@@ -1,0 +1,49 @@
+.title {
+  background-color: rgb(21, 101, 192);
+  color: white;
+  background-size: 64px;
+  text-align: center;
+  font-size: 35px;
+  height: 64px;
+  --box-shadow: none;
+}
+
+
+.menu {
+  background-color: rgb(21, 101, 192);
+  height: 60px;
+}
+
+.menubutton {
+  background-color: rgb(21, 101, 192);
+  color: white;
+  font-size: 13px;
+}
+
+.ion-icon {
+  font-size: 45px;
+  --ionicon-stroke-width: 40px;
+}
+
+.menumenu {
+  --background: rgb(21, 101, 192);
+  color: white;
+  margin-bottom: 2.5px;
+  --box-shadow: none;
+  width: 68px;
+  height: 68px;
+  margin-left: -6px;
+}
+.ion-icon-menu {
+  font-size: 55px;
+  --ionicon-stroke-width: 45px;
+}
+
+.menushadow {
+  --background: rgb(60, 141, 233);
+  --box-shadow: none;
+  width: 80px;
+  height: 80px;
+  margin-bottom: -8px;
+  margin-left: -12px;
+}

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Launcher</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> </ion-content>
+<!-- Bottom Menu------------------------ -->
+<ion-tabs>
+  <ion-tab-bar class="menu" slot="bottom">
+    <ion-tab-button class="menubutton" tab="schedule">
+      <ion-icon class="ion-icon" name="home-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button class="menubutton" tab="speakers">
+      <ion-icon class="ion-icon" name="heart-outline"></ion-icon>
+      <ion-label>Wishlist</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button class="menumenu" tab="map">
+      <!--<ion-icon class = "ion-icon" name="menu-outline"></ion-icon>
+      <ion-label>Menu</ion-label>-->
+    </ion-tab-button>
+
+    <ion-tab-button class="menubutton" tab="about">
+      <ion-icon class="ion-icon" name="cart-outline"></ion-icon>
+      <ion-label>Cart</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button class="menubutton" tab="about">
+      <ion-icon class="ion-icon" name="person-outline"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+
+<ion-fab vertical="bottom" horizontal="center">
+  <ion-fab-button class="menushadow"> </ion-fab-button>
+</ion-fab>
+
+<ion-fab vertical="bottom" horizontal="center">
+  <ion-fab-button menu="main-menu" class="menumenu" (click)="gotomenu()">
+    <ion-icon class="ion-icon-menu" name="menu-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
