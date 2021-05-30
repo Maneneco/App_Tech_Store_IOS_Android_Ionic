@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,8 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private menu: MenuController) {}
-  
+  constructor(private menu: MenuController, private router: Router) {}
+
   menuteste() {
     this.menu.enable(true, 'main-menu');
     this.menu.open('main-menu');
@@ -29,5 +30,7 @@ export class AppComponent {
     this.menu.open('menu-profile');
   }
 
-  helppage() {}
+  menumobile() {
+    this.router.navigate(['/mobile']);
+  }
 }

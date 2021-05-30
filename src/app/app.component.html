@@ -3,7 +3,7 @@
   <ion-toolbar>
     <ion-title class="title">
       InTech
-      <ion-icon class="icons-header" src="../assets/Mobile.svg"></ion-icon>
+      <ion-icon class="icons-header" src="../assets/Search.svg"></ion-icon>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -16,7 +16,7 @@
       <ion-label>Home</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button class="menubutton">
+    <ion-tab-button class="menubutton" routerlink="wishlist">
       <ion-icon class="ion-icon" name="heart-outline"></ion-icon>
       <ion-label>Wishlist</ion-label>
     </ion-tab-button>
@@ -60,82 +60,72 @@
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  <ion-content id="main">
-    <ion-list class="sidemenuoptions">
-      <ion-menu-toggle>
-        <ion-item routerLink="">
-          <ion-label class="menu1">
-            <ion-icon class="icons-menu" src="../assets/Mobile.svg"></ion-icon>
-            <ion-text class="menutext"> Mobile</ion-text>
-          </ion-label>
-        </ion-item>
-      </ion-menu-toggle>
-      <ion-menu-toggle>
-        <ion-item routerLink="whatdoeshedo">
-          <ion-label class="menu1"
-            ><ion-icon
-              class="icons-menu"
-              style="width: 30px; height: 30px"
-              src="../assets/gaming.svg"
-            ></ion-icon>
-            <ion-text class="menutext"> Gaming</ion-text>
-          </ion-label>
-        </ion-item>
-      </ion-menu-toggle>
-      <ion-menu-toggle>
-        <ion-item routerLink="lifeachievements">
-          <ion-label class="menu1">
-            <ion-icon
-              class="icons-menu"
-              style="width: 25px; height: 25px"
-              src="../assets/Office.svg"
-            ></ion-icon>
-            <ion-text class="menutext"> Office</ion-text>
-          </ion-label>
-        </ion-item>
-      </ion-menu-toggle>
-      <ion-menu-toggle>
-        <ion-item routerLink="education">
-          <ion-label class="menu1">
-            <ion-icon class="icons-menu" name="home-outline"></ion-icon>
-            <ion-text class="menutext"> Home</ion-text>
-          </ion-label>
-        </ion-item>
-      </ion-menu-toggle>
-      <ion-menu-toggle>
-        <ion-item routerLink="hobbies">
-          <ion-label class="menu1">
-            <ion-icon class="icons-menu" src="../assets/tvsom.svg"></ion-icon>
-            <ion-text class="menutext"> TV & Sound</ion-text>
-          </ion-label>
-        </ion-item>
-      </ion-menu-toggle>
-      <ion-menu-toggle>
-        <ion-item routerLink="hobbies">
-          <ion-label class="menu1">
-            <ion-icon
-              class="icons-menu"
-              src="../assets/Smarthome.svg"
-            ></ion-icon>
-            <ion-text class="menutext"> Smart Home</ion-text>
-          </ion-label>
-        </ion-item>
-      </ion-menu-toggle>
-    </ion-list>
-    <ion-item lines="none" button (click)="buttonClick()">
-      <img
-        routerLink="help"
-        src="../assets/img/needhelp.png"
-        class="helppage()"
-      />
-    </ion-item>
-  </ion-content>
+  <ion-list class="sidemenuoptions">
+    <ion-menu-toggle (click)="menumobile()">
+      <ion-item>
+        <ion-label class="menu1">
+          <ion-icon class="icons-menu" src="../assets/Mobile.svg"></ion-icon>
+          <ion-text class="menutext"> Mobile</ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+    <ion-menu-toggle>
+      <ion-item routerLink="whatdoeshedo">
+        <ion-label class="menu1"
+          ><ion-icon
+            class="icons-menu"
+            style="width: 30px; height: 30px"
+            src="../assets/gaming.svg"
+          ></ion-icon>
+          <ion-text class="menutext"> Gaming</ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+    <ion-menu-toggle>
+      <ion-item routerLink="lifeachievements">
+        <ion-label class="menu1">
+          <ion-icon
+            class="icons-menu"
+            style="width: 25px; height: 25px"
+            src="../assets/Office.svg"
+          ></ion-icon>
+          <ion-text class="menutext"> Office</ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+    <ion-menu-toggle>
+      <ion-item routerLink="education">
+        <ion-label class="menu1">
+          <ion-icon class="icons-menu" name="home-outline"></ion-icon>
+          <ion-text class="menutext"> Home</ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+    <ion-menu-toggle>
+      <ion-item routerLink="hobbies">
+        <ion-label class="menu1">
+          <ion-icon class="icons-menu" src="../assets/tvsom.svg"></ion-icon>
+          <ion-text class="menutext"> TV & Sound</ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+    <ion-menu-toggle>
+      <ion-item routerLink="hobbies">
+        <ion-label class="menu1">
+          <ion-icon class="icons-menu" src="../assets/Smarthome.svg"></ion-icon>
+          <ion-text class="menutext"> Smart Home</ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+  </ion-list>
+  <ion-item lines="none" button (click)="buttonClick()">
+    <img
+      routerLink="help"
+      src="../assets/img/needhelp.png"
+      class="helppage()"
+    />
+  </ion-item>
 </ion-menu>
-
-
-
-
-
 
 <!-- Login Create Account -->
 <ion-menu side="end" menuId="menu-choose" contentId="main">
@@ -163,8 +153,6 @@
     </ion-item>
   </ion-content>
 </ion-menu>
-
-
 
 <!-- Menu Login -->
 <ion-menu side="end" menuId="menu-login" contentId="main">
@@ -195,13 +183,9 @@
   </ion-content>
 </ion-menu>
 
-
-
-
 <!-- Menu Profile User -->
-
 <ion-menu side="end" menuId="menu-profile" contentId="main">
-<ion-header>
+  <ion-header>
     <ion-toolbar class="sidemenu">
       <ion-buttons>
         <div class="menuclose" (click)="closemenu()">
@@ -210,21 +194,46 @@
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-   <ion-item lines="none" class="helplogin" button (click)="helppage()">
-      <img src="../assets/img/needhelp.png" />
-    </ion-item>
-  <!-- buttonlogingoogle -->
-  <ion-button class="login" fill="outline" (click)="menuprofile()">
-    <ion-icon class="icons-login" src="../assets/Logingoogle.svg"></ion-icon>
-    <ion-text style="margin-left: 5px">Log in with Google</ion-text>
-  </ion-button>
-  <!-- buttonloginemail -->
-  <ion-button style="margin-top: 5px" class="login" fill="outline">
-    <ion-icon class="icons-login" src="../assets/Loginemail.svg"></ion-icon>
-    <ion-text style="margin-left: 5px">Log in with email</ion-text>
-  </ion-button>
+  <ion-item lines="none" button (click)="helppage()">
+    <img class="hellouser" src="../assets/img/RoboUser.png" />
+  </ion-item>
   <ion-content id="main">
-    <ion-list class="sidemenuoptions"> </ion-list>
-   
+    <ion-list class="sidemenuoptions">
+      <ion-menu-toggle>
+        <ion-item routerLink="">
+          <ion-label no-lines class="menuprofile">
+            <ion-text class="menutext"> My Account</ion-text>
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Menu Cart -->
+
+<ion-menu side="end" menuId="menu-cart" contentId="main">
+  <ion-header>
+    <ion-toolbar class="sidemenu">
+      <ion-buttons>
+        <div class="menuclose" (click)="closemenu()">
+          <ion-icon slot="end" name="close-outline"></ion-icon>
+        </div>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-item lines="none" button (click)="helppage()">
+    <img class="hellouser" src="../assets/img/RoboUser.png" />
+  </ion-item>
+  <ion-content id="main">
+    <ion-list class="sidemenuoptions">
+      <ion-menu-toggle>
+        <ion-item routerLink="">
+          <ion-label no-lines class="menuprofile">
+            <ion-text class="menutext"> My Account</ion-text>
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
   </ion-content>
 </ion-menu>
