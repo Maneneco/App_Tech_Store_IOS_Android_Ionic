@@ -8,6 +8,7 @@ import { MenuController } from '@ionic/angular';
 })
 export class AppComponent {
   constructor(private menu: MenuController) {}
+  
   menuteste() {
     this.menu.enable(true, 'main-menu');
     this.menu.open('main-menu');
@@ -15,8 +16,18 @@ export class AppComponent {
   closemenu() {
     this.menu.close();
   }
+  menuchoose() {
+    this.menu.enable(true, 'menu-choose');
+    this.menu.open('menu-choose');
+  }
+  menulogin() {
+    this.menu.enable(true, 'menu-login');
+    this.menu.open('menu-login');
+  }
   menuprofile() {
     this.menu.enable(true, 'menu-profile');
     this.menu.open('menu-profile');
   }
+
+  helppage() {}
 }
