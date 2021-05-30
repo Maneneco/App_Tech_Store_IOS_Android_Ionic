@@ -17,6 +17,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./launcher/launcher.module').then((m) => m.LauncherPageModule),
   },
+  {
+    path: 'help',
+    loadChildren: () => import('./help/help.module').then( m => m.HelpPageModule)
+  },
 ];
 
 @NgModule({

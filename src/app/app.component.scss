@@ -24,6 +24,11 @@
   --ionicon-stroke-width: 40px;
 }
 
+.icons-menu {
+  width: 30px;
+  height: 30px;
+}
+
 .menumenu {
   --background: rgb(21, 101, 192);
   color: white;
@@ -64,10 +69,10 @@
 }
 
 .help {
-  margin-top: 40px;
-  margin-left:20px;
-  width: 250px;
-  height: 250px;
+  margin-left: 50px;
+  margin-top: 30px;
+  width: 200px;
+  height: 200px;
   box-shadow: none !important;
   border: none;
 }
@@ -76,4 +81,8 @@
   color: rgb(21, 101, 192);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
+}
+
+.menutext{
+  vertical-align: 8px;
 }
