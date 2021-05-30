@@ -69,15 +69,14 @@
       <ion-menu-toggle>
         <ion-item routerLink="whatdoeshedo">
           <ion-label class="menu1"
-            ><ion-icon class="icons-menu" name="home-outline"></ion-icon>
-            Gamming
+            ><ion-icon class="icons-menu" name="home-outline"></ion-icon> Gaming
           </ion-label>
         </ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle>
         <ion-item routerLink="lifeachievements">
           <ion-label class="menu1">
-            <ion-icon class="icons-menu" name="home-outline"></ion-icon>Office
+            <ion-icon class="icons-menu" name="home-outline"></ion-icon> Office
           </ion-label>
         </ion-item>
       </ion-menu-toggle>
@@ -91,32 +90,25 @@
       <ion-menu-toggle>
         <ion-item routerLink="hobbies">
           <ion-label class="menu1">
-            <ion-icon class="icons-menu" name="home-outline"></ion-icon>TV &
+            <ion-icon class="icons-menu" name="home-outline"></ion-icon> TV &
             Sound
           </ion-label>
         </ion-item>
       </ion-menu-toggle>
-      <ion-menu-toggle>
-        <ion-item routerLink="pics">
-          <ion-label class="menu1">
-            <ion-icon class="icons-menu" name="home-outline"></ion-icon>Smart
-            Home
-          </ion-label>
-        </ion-item>
-      </ion-menu-toggle>
     </ion-list>
-    <div class="help">
-      <img src="../../assets/Profile-01.png" alt="" />
+    <div>
+      <img src="../assets/img/needhelp.png" class="help" />
     </div>
   </ion-content>
 </ion-menu>
 
 <!-- Menu Profile -->
-
-<ion-menu side="end" menuId="main-profile" contentId="main">
-  <ion-header class="sidemenu">
+<ion-menu side="end" menuId="menu-profile" contentId="main">
+  <div class="profile">
+    <img src="../../src/assets/img/Profile.png" alt="" />
+  </div>
+  <ion-header>
     <ion-toolbar class="sidemenu">
-      <ion-title>Menu</ion-title>
       <ion-buttons slot="primary">
         <div class="menuclose" (click)="closemenu()">
           <ion-icon slot="end" name="close-outline"></ion-icon>
@@ -127,7 +119,7 @@
   <ion-content id="main">
     <ion-list class="sidemenuoptions">
       <ion-menu-toggle>
-        <ion-item routerLink="whoishe">
+        <ion-item routerLink="home">
           <ion-label class="menu1">
             <ion-icon class="icons-menu" name="home-outline"></ion-icon> Mobile
           </ion-label>
@@ -172,8 +164,8 @@
         </ion-item>
       </ion-menu-toggle>
     </ion-list>
-    <div class="help">
-      <img src="../../assets/Profile-01.png" alt="" />
+   <div style="margin-top: 20px; margin-left: 30px">
+      <img src="../assets/img/needhelp.png" class="help" />
     </div>
   </ion-content>
 </ion-menu>

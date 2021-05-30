@@ -53,14 +53,27 @@
   color: white;
 }
 
-.sidemenu{
+.sidemenu {
   color: white;
   height: 64px;
- --background: rgb(21, 101, 192);
+  --background: rgb(21, 101, 192);
 }
 
-.sidemenuoptions{
+.sidemenuoptions {
+  margin-top: 40px;
+}
 
-margin-top: 40px;
+.help {
+  margin-top: 40px;
+  margin-left:20px;
+  width: 250px;
+  height: 250px;
+  box-shadow: none !important;
+  border: none;
+}
 
+.menu1 {
+  color: rgb(21, 101, 192);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
 }
