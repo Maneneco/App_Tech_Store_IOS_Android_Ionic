@@ -1,22 +1,30 @@
 <!-- Header Intech----------------------------- -->
-<ion-header>
-  <ion-toolbar>
-    <ion-title class="title">
-      InTech
-      <ion-icon class="icons-header" src="../assets/Search.svg"></ion-icon>
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+
+<ion-toolbar>
+  <ion-buttons islot="icon-only" class="icons-header" slot="start">
+    <ion-menu-button auto-hide="false"></ion-menu-button>
+  </ion-buttons>
+  <ion-buttons routerlink="" class="icons-header" slot="end">
+    <ion-button>
+      <ion-icon
+        size="large"
+        islot="icon-only"
+        src="../assets/Search.svg"
+      ></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title class="title">Intech</ion-title>
+</ion-toolbar>
 
 <!-- Bottom Menu-------------------------->
 <ion-tabs>
   <ion-tab-bar class="menu" slot="bottom">
-    <ion-tab-button class="menubutton">
+    <ion-tab-button class="menubutton" routerLink="home">
       <ion-icon class="ion-icon" name="home-outline"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button class="menubutton" routerlink="wishlist">
+    <ion-tab-button class="menubutton" routerLink="wishlist">
       <ion-icon class="ion-icon" name="heart-outline"></ion-icon>
       <ion-label>Wishlist</ion-label>
     </ion-tab-button>
