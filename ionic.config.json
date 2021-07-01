@@ -1,5 +1,7 @@
 {
   "name": "Intech",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

@@ -1,1 +1,40 @@
 
+.check{
+    color: rgb(21, 101, 192);
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    height: 80px;
+    line-height: 70px; 
+}
+
+.check2{
+    color: rgb(21, 101, 192);
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    height: 200px;
+    line-height: 100px; 
+}
+
+.card{   
+    border-radius: 20px;
+    border: 1px solid rgb(21, 101, 192);
+    height: 200px;
+    width: 150px;
+    padding: 0px;
+    margin-left: 10px;
+    --box-shadow: none;
+    align-items: center;
+}
+
+.card2{   
+    border-radius: 20px;
+    border: 1px solid rgb(21, 101, 192);
+    height: 200px;
+    padding: 0px;
+    width: 150px;
+    margin-right: 10px;
+    --box-shadow: none;
+    float: right;
+}
