@@ -1,19 +1,34 @@
-<!-- Header Intech----------------------------- -->
-
+<!-- Header Intech------------------------------->
 <ion-toolbar>
-  <ion-buttons islot="icon-only" class="icons-header" slot="start">
-    <ion-menu-button auto-hide="false"></ion-menu-button>
-  </ion-buttons>
-  <ion-buttons routerlink="" class="icons-header" slot="end">
-    <ion-button>
-      <ion-icon
-        size="large"
-        islot="icon-only"
-        src="../assets/Search.svg"
-      ></ion-icon>
-    </ion-button>
-  </ion-buttons>
-  <ion-title class="title">Intech</ion-title>
+  <ion-row id="topbar" style="background-color: rgb(21, 101, 192)">
+    <ion-col size="3">
+      <ion-button color="rgb(21,101,192)" style="--box-shadow: none">
+        <ion-icon name="menu-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-title class="title">Intech</ion-title>
+    </ion-col>
+    <ion-col size="3">
+      <ion-buttons
+        style="float: right; align-items: center"
+        routerlink=""
+        class="icons-header"
+      >
+        <ion-button (click)="togglesearchbar()">
+          <ion-icon
+            size="large"
+            islot="icon-only"
+            src="../assets/Search.svg"
+          ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-col>
+    <ion-searchbar
+      style="margin-top: -30px; border-radius: 40%;"
+      *ngIf="showsearchbar"
+    ></ion-searchbar>
+  </ion-row>
 </ion-toolbar>
 
 <!-- Bottom Menu-------------------------->
@@ -34,7 +49,7 @@
       <ion-label>Menu</ion-label>-->
     </ion-tab-button>
 
-    <ion-tab-button class="menubutton">
+    <ion-tab-button class="menubutton" (click)="menucart()">
       <ion-icon class="ion-icon" name="cart-outline"></ion-icon>
       <ion-label>Cart</ion-label>
     </ion-tab-button>
@@ -136,7 +151,12 @@
 </ion-menu>
 
 <!-- Login Create Account -->
-<ion-menu side="end" menuId="menu-choose" contentId="main">
+<ion-menu
+  *ngIf="logged == false"
+  side="end"
+  menuId="menu-choose"
+  contentId="main"
+>
   <ion-header>
     <ion-toolbar class="sidemenu">
       <ion-buttons>
@@ -151,7 +171,12 @@
     <ion-text style="margin-left: 5px">Log in</ion-text>
   </ion-button>
   <!-- buttoncreateaccount -->
-  <ion-button style="margin-top: 5px" class="login" fill="outline">
+  <ion-button
+    style="margin-top: 5px"
+    class="login"
+    fill="outline"
+    (click)="menucreate()"
+  >
     <ion-text style="margin-left: 5px">Create an Account</ion-text>
   </ion-button>
   <ion-content id="main">
@@ -174,14 +199,34 @@
     </ion-toolbar>
   </ion-header>
   <!-- buttonlogingoogle -->
-  <ion-button class="login" fill="outline" (click)="menuprofile()">
+  <ion-text
+    style="
+      text-align: center;
+      margin-top: 40px;
+      color: rgb(112, 112, 112);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 30px;
+    "
+    >Log in:
+  </ion-text>
+  <ion-button
+    style="margin-top: 5px"
+    class="login"
+    fill="outline"
+    (click)="menuprofile()"
+  >
     <ion-icon class="icons-login" src="../assets/Logingoogle.svg"></ion-icon>
-    <ion-text style="margin-left: 5px">Log in with Google</ion-text>
+    <ion-text style="margin-left: 5px">With Google</ion-text>
   </ion-button>
   <!-- buttonloginemail -->
-  <ion-button style="margin-top: 5px" class="login" fill="outline">
+  <ion-button
+    style="margin-top: 5px"
+    class="login"
+    fill="outline"
+    (click)="menuloginemail()"
+  >
     <ion-icon class="icons-login" src="../assets/Loginemail.svg"></ion-icon>
-    <ion-text style="margin-left: 5px">Log in with email</ion-text>
+    <ion-text style="margin-left: 5px">With Email</ion-text>
   </ion-button>
   <ion-content id="main">
     <ion-list class="sidemenuoptions"> </ion-list>
@@ -192,7 +237,12 @@
 </ion-menu>
 
 <!-- Menu Profile User -->
-<ion-menu side="end" menuId="menu-profile" contentId="main">
+<ion-menu
+  *ngIf="logged == true"
+  side="end"
+  menuId="menu-choose"
+  contentId="main"
+>
   <ion-header>
     <ion-toolbar class="sidemenu">
       <ion-buttons>
@@ -214,12 +264,42 @@
           </ion-label>
         </ion-item>
       </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="">
+          <ion-label no-lines class="menuprofile">
+            <ion-text class="menutext"> My Account</ion-text>
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="">
+          <ion-label no-lines class="menuprofile">
+            <ion-text class="menutext"> My Account</ion-text>
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="">
+          <ion-label no-lines class="menuprofile">
+            <ion-text class="menutext"> My Account</ion-text>
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="">
+          <ion-label no-lines class="menuprofile">
+            <ion-text class="menutext"> My Account</ion-text>
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
     </ion-list>
+    <ion-button type="button" color="danger" expand="block" (click)="logout()"
+      >Log out</ion-button
+    >
   </ion-content>
 </ion-menu>
 
 <!-- Menu Cart -->
-
 <ion-menu side="end" menuId="menu-cart" contentId="main">
   <ion-header>
     <ion-toolbar class="sidemenu">
@@ -230,18 +310,82 @@
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  <ion-item lines="none" button (click)="helppage()">
-    <img class="hellouser" src="../assets/img/RoboUser.png" />
-  </ion-item>
-  <ion-content id="main">
-    <ion-list class="sidemenuoptions">
-      <ion-menu-toggle>
-        <ion-item routerLink="">
-          <ion-label no-lines class="menuprofile">
-            <ion-text class="menutext"> My Account</ion-text>
-          </ion-label>
-        </ion-item>
-      </ion-menu-toggle>
-    </ion-list>
-  </ion-content>
+</ion-menu>
+
+<!-- Create Account -->
+<ion-menu side="end" menuId="menu-create" contentId="main">
+  <ion-header>
+    <ion-toolbar class="sidemenu">
+      <ion-buttons>
+        <div class="menuclose" (click)="closemenu()">
+          <ion-icon slot="end" name="close-outline"></ion-icon>
+        </div>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Usarname</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block"
+          >Sign Up</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-menu>
+
+<!-- Menu login email -->
+<ion-menu side="end" menuId="menu-login-email" contentId="main">
+  <ion-header>
+    <ion-toolbar class="sidemenu">
+      <ion-buttons>
+        <div class="menuclose" (click)="closemenu()">
+          <ion-icon slot="end" name="close-outline"></ion-icon>
+        </div>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button
+          type="button"
+          color="danger"
+          expand="block"
+          (click)="login()"
+          >Sign In</ion-button
+        >
+        <a [routerLink]="['/forgot-password']" class="small-text"
+          >Forgot Password?</a
+        >
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-menu>
