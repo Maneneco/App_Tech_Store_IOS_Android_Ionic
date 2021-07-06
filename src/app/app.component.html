@@ -1,10 +1,11 @@
 <!-- Header Intech------------------------------->
 <ion-toolbar>
-  <ion-row id="topbar" style="background-color: rgb(21, 101, 192)">
+  <ion-row id="topbar" style="background-color: rgb(21, 101, 192); height: 74px;" >
     <ion-col size="3">
-      <ion-button color="rgb(21,101,192)" style="--box-shadow: none">
-        <ion-icon name="menu-outline" size="large"></ion-icon>
+       <ion-button (click)="menuteste()" color="rgb(21,101,192)" style="--box-shadow: none; height: 74px; width: auto; margin-top: -5px; margin-left: -5px; ">
+         <ion-icon name="menu-outline"  style="font-size: 45px;"></ion-icon>
       </ion-button>
+
     </ion-col>
     <ion-col>
       <ion-title class="title">Intech</ion-title>
@@ -15,7 +16,7 @@
         routerlink=""
         class="icons-header"
       >
-        <ion-button (click)="togglesearchbar()">
+        <ion-button style="height: 74px; width: auto; margin-top: -5px; margin-left: -5px;"(click)="togglesearchbar()">
           <ion-icon
             size="large"
             islot="icon-only"
@@ -25,8 +26,10 @@
       </ion-buttons>
     </ion-col>
     <ion-searchbar
-      style="margin-top: -30px; border-radius: 40%;"
+      style="width: 400px; margin: auto; margin-top: -25px; --border-radius: 100px;"
       *ngIf="showsearchbar"
+      (change)="search($event)"
+      placeholder="Search product by name"
     ></ion-searchbar>
   </ion-row>
 </ion-toolbar>
@@ -70,6 +73,8 @@
     <ion-icon class="ion-icon-menu" name="menu-outline"></ion-icon>
   </ion-fab-button>
 </ion-fab>
+
+
 
 <!-- Menu Escolhas -->
 <ion-menu side="start" menuId="main-menu" contentId="main">
@@ -181,7 +186,7 @@
   </ion-button>
   <ion-content id="main">
     <ion-list class="sidemenuoptions"> </ion-list>
-    <ion-item lines="none" class="helplogin" button (click)="helppage()">
+    <ion-item lines="none" class="helplogin" button (click)="buttonClick()">
       <img src="../assets/img/needhelp.png" />
     </ion-item>
   </ion-content>
@@ -218,6 +223,7 @@
     <ion-icon class="icons-login" src="../assets/Logingoogle.svg"></ion-icon>
     <ion-text style="margin-left: 5px">With Google</ion-text>
   </ion-button>
+
   <!-- buttonloginemail -->
   <ion-button
     style="margin-top: 5px"
@@ -225,12 +231,14 @@
     fill="outline"
     (click)="menuloginemail()"
   >
-    <ion-icon class="icons-login" src="../assets/Loginemail.svg"></ion-icon>
-    <ion-text style="margin-left: 5px">With Email</ion-text>
+
+  <ion-icon class="icons-login" src="../assets/Loginemail.svg"></ion-icon>
+  <ion-text style="margin-left: 5px; text-align: center;">With Email</ion-text>
+
   </ion-button>
   <ion-content id="main">
     <ion-list class="sidemenuoptions"> </ion-list>
-    <ion-item lines="none" class="helplogin" button (click)="helppage()">
+    <ion-item lines="none" class="helplogin" button (click)="buttonClick()">
       <img src="../assets/img/needhelp.png" />
     </ion-item>
   </ion-content>
@@ -252,50 +260,54 @@
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  <ion-item lines="none" button (click)="helppage()">
+
+  <ion-item style ="position: relative;" lines="none" button (click)="buttonClick()"> <!--Não faz parte das tarefas-->
     <img class="hellouser" src="../assets/img/RoboUser.png" />
+    <ion-text style="position: absolute; color: rgb(85, 123, 163); font-size: 25px; right: 30px; top: 100px;">Username</ion-text>
   </ion-item>
-  <ion-content id="main">
+
+  <ion-content>
     <ion-list class="sidemenuoptions">
-      <ion-menu-toggle>
+
         <ion-item routerLink="">
           <ion-label no-lines class="menuprofile">
             <ion-text class="menutext"> My Account</ion-text>
           </ion-label>
         </ion-item>
-      </ion-menu-toggle>
-      <ion-menu-toggle>
+
         <ion-item routerLink="">
           <ion-label no-lines class="menuprofile">
-            <ion-text class="menutext"> My Account</ion-text>
+            <ion-text class="menutext"> Cart</ion-text>
           </ion-label>
         </ion-item>
-      </ion-menu-toggle>
-      <ion-menu-toggle>
+
         <ion-item routerLink="">
           <ion-label no-lines class="menuprofile">
-            <ion-text class="menutext"> My Account</ion-text>
+            <ion-text class="menutext"> Wishlist</ion-text>
           </ion-label>
         </ion-item>
-      </ion-menu-toggle>
-      <ion-menu-toggle>
+
         <ion-item routerLink="">
           <ion-label no-lines class="menuprofile">
-            <ion-text class="menutext"> My Account</ion-text>
+            <ion-text class="menutext"> History</ion-text>
           </ion-label>
         </ion-item>
-      </ion-menu-toggle>
-      <ion-menu-toggle>
+
         <ion-item routerLink="">
           <ion-label no-lines class="menuprofile">
-            <ion-text class="menutext"> My Account</ion-text>
+            <ion-text class="menutext"> My orders</ion-text>
           </ion-label>
         </ion-item>
-      </ion-menu-toggle>
+
+        <ion-item routerLink="products" (click)="closemenu()">
+          <ion-label no-lines class="menuprofile">
+            <ion-text class="menutext"> Warranty tables</ion-text>
+          </ion-label>
+        </ion-item>
+
     </ion-list>
-    <ion-button type="button" color="danger" expand="block" (click)="logout()"
-      >Log out</ion-button
-    >
+    <ion-button type="button" style="background-color: rgb(21, 101, 192); color:white; width: 70%;" expand="block" (click)="logout()"
+      >Log out</ion-button>
   </ion-content>
 </ion-menu>
 
@@ -324,30 +336,74 @@
     </ion-toolbar>
   </ion-header>
 
-  <form>
-    <ion-item lines="full">
-      <ion-label position="floating">Usarname</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
+  <ion-content>
+    <form [formGroup]="createForm" (ngSubmit)="createAccount()" novalidate>
 
-    <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Usarname</ion-label>
+        <ion-input type="text" formControlName="username" required></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="createSubmit && formControl.username.errors?.required">
+        Username Required
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="createSubmit && formControl.username.errors?.pattern">
+        Invalid Usarname
+      </ion-text>
+      <!-- <ion-text class="ion-padding" color="danger" *ngIf="createSubmit && formControl.email.errors?.pattern">
+        Usarname already exists
+      </ion-text>--> <!--Implement with a date base-->
 
-    <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" required></ion-input>
-    </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email" required></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="createSubmit && formControl.email.errors?.required">
+        Email Required
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="createSubmit && formControl.email.errors?.pattern">
+        Invalid Email
+      </ion-text>
+      <!-- <ion-text class="ion-padding" color="danger" *ngIf="createSubmit && formControl.email.errors?.pattern">
+        Invalid Email
+      </ion-text> --> <!--Implement with a data base-->
 
-    <ion-row>
-      <ion-col>
-        <ion-button type="submit" color="danger" expand="block"
-          >Sign Up</ion-button
-        >
-      </ion-col>
-    </ion-row>
-  </form>
+      <ion-item lines="full">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password" required></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="createSubmit && formControl.password.errors?.required">
+        Password Required
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="createSubmit && formControl.password.errors?.pattern">
+        Invalid Passowrd
+      </ion-text>
+      <!-- <ion-text class="ion-padding" color="danger" *ngIf="createSubmit && formControl.email.errors?.pattern">
+        Week Passowrd
+      </ion-text> -->
+
+      <ion-item lines="full">
+        <ion-label position="floating"> Repeat Password</ion-label>
+        <ion-input type="password" formControlName="password2" required></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="createSubmit && formControl.password2.errors?.required">
+        Password Required
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="createSubmit && formControl.password2.errors?.pattern">
+        Invalid Passowrd
+      </ion-text>
+      <!-- <ion-text class="ion-padding" color="danger" *ngIf="createSubmit && formControl.email.errors?.pattern">
+        Week Passowrd
+      </ion-text> -->
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" style="background-color: rgb(21, 101, 192); color:white;" expand="block"
+            >Sign Up</ion-button
+          >
+        </ion-col>
+      </ion-row>
+    </form>
+</ion-content>
 </ion-menu>
 
 <!-- Menu login email -->
@@ -362,30 +418,45 @@
     </ion-toolbar>
   </ion-header>
 
-  <form>
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="login()" novalidate>
+
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="email" formControlName="email" required></ion-input>
     </ion-item>
+    <ion-text class="ion-padding" color="danger" *ngIf="submit && formControl.email.errors?.required">
+      Email Required
+    </ion-text>
+    <ion-text class="ion-padding" color="danger" *ngIf="submit && formControl.email.errors?.pattern">
+      Invalid Email
+    </ion-text>
 
     <ion-item lines="full">
       <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-input type="password" formControlName="password" required></ion-input>
     </ion-item>
+    <ion-text class="ion-padding" color="danger" *ngIf="submit && formControl.password.errors?.required">
+      Password Required
+    </ion-text>
+    <ion-text class="ion-padding" color="danger" *ngIf="submit && formControl.password.errors?.minlenght">
+      Wrong Password
+    </ion-text>
 
     <ion-row>
       <ion-col>
-        <ion-button
-          type="button"
-          color="danger"
-          expand="block"
-          (click)="login()"
-          >Sign In</ion-button
-        >
-        <a [routerLink]="['/forgot-password']" class="small-text"
-          >Forgot Password?</a
-        >
-      </ion-col>
+          <ion-button
+              type="submit"
+              style="background-color: rgb(21, 101, 192); color:white;"
+              expand="block">
+              Sign In
+          </ion-button>
+        </ion-col>
     </ion-row>
+
+    <a [routerLink]="['/forgot-password']" class="small-text"
+      >Forgot Password?</a>
+
   </form>
+</ion-content>
 </ion-menu>

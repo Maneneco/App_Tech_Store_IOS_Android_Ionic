@@ -19,27 +19,64 @@ const routes: Routes = [
   },
   {
     path: 'help',
-    loadChildren: () => import('./help/help.module').then( m => m.HelpPageModule)
-  },
-  {
-    path: 'mobile',
-    loadChildren: () => import('./mobile/mobile.module').then( m => m.MobilePageModule)
+    loadChildren: () =>
+      import('./help/help.module').then( m => m.HelpPageModule)
   },
   {
     path: 'wishlist',
-    loadChildren: () => import('./wishlist/wishlist.module').then( m => m.WishlistPageModule)
+    loadChildren: () =>
+      import('./wishlist/wishlist.module').then( m => m.WishlistPageModule)
   },
   {
     path: 'myorders',
-    loadChildren: () => import('./myorders/myorders.module').then( m => m.MyordersPageModule)
-  },
-  {
-    path: 'warrantytables',
-    loadChildren: () => import('./warrantytables/warrantytables.module').then( m => m.WarrantytablesPageModule)
+    loadChildren: () =>
+      import('./myorders/myorders.module').then( m => m.MyordersPageModule)
   },
   {
     path: 'myaccount',
-    loadChildren: () => import('./myaccount/myaccount.module').then( m => m.MyaccountPageModule)
+    loadChildren: () =>
+      import('./myaccount/myaccount.module').then( m => m.MyaccountPageModule)
+  },
+  {
+    path: 'search',
+    loadChildren: () =>
+      import('./search/search.module').then( m => m.SearchPageModule)
+  },
+  {
+    path: 'produto',
+    loadChildren: () =>
+      import('./produto/produto.module').then( m => m.ProdutoPageModule)
+  },
+  {
+    path: 'cart',
+    loadChildren: () =>
+      import('./cart/cart.module').then( m => m.CartPageModule)
+  },
+  {
+    path: 'payment',
+    loadChildren: () =>
+      import('./payment/payment.module').then( m => m.PaymentPageModule)
+  },
+  {
+    path: 'paymentdone',
+    loadChildren: () =>
+      import('./paymentdone/paymentdone.module').then( m => m.PaymentdonePageModule)
+  },
+  {
+    path: 'products',
+    loadChildren: () => import('./pages/products/products.module').then( m => m.ProductsPageModule)
+  },
+  {
+    path: 'products/:id',
+    loadChildren: () => import('./pages/product/product.module').then( m => m.ProductPageModule)
+  },
+  {
+    path: 'addinformation',
+    loadChildren: () => import('./addinformation/addinformation.module').then( m => m.AddinformationPageModule)
+  },
+  {
+    path: 'warrantydone',
+    loadChildren: () => import('./warrantydone/warrantydone.module').then( m => m.WarrantydonePageModule)
   },
 ];
 
