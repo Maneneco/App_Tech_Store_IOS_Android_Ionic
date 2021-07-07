@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar style="height: 74px">
+    <ion-title>addinformation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="align-items: center">
+  <ion-title style="text-align: center; margin: 10px; padding: 10px;">
+    Welcome to Warranty request
+  </ion-title>
+  <ion-label style="margin-top: 20px; margin-left: 10px;">
+    Fill the form to request warranty for your product <br>
+  </ion-label>
+  <ion-label style="margin-bottom: 10px; margin-left: 10px;">
+    When it happened? <br>
+  </ion-label>
+  <ion-label style=" margin-left: 10px;">
+    Select Date
+  </ion-label >
+  <ion-datetime displayFormat="DD MMM, YYYY HH:mm" [(ngModel)]="date" value="{{date}}"></ion-datetime>
+  <ion-label style="margin-left: 10px;">
+    Serial Number <br>
+  </ion-label>
+  <input style="margin-bottom: 10px; margin-left: 10px;"> <br>
+<ion-label style="margin-bottom: 10px; margin-left: 10px;">
+ Describe the problem with more details possible: <br>
+</ion-label>
+ <input style="margin-left: 10px;"> <ion-textarea></ion-textarea>
+  <ion-button expand="block" style=" background-color: rgb(21, 101, 192); color:white; width: 70%; margin: auto;" (click)="warrantydone()">
+    Ask Warranty
+  </ion-button>
+</ion-content>

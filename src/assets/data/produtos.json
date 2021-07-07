@@ -1,0 +1,80 @@
+{
+     "1" : {
+    "type": "Keyboard",
+    "model": "msi ",
+    "price": "19,90€",
+    "filter":{
+              "layout": "PT",
+              "keys": "Mechanic",
+              "connection": "Cable",
+              "rgb": "Yes",
+              "flow": "Gaming"
+            }
+  },
+
+  
+     "2" :{
+    "type": "Keyboard",
+    "model": "Asus ROG",
+    "price": "34,60€",
+    "filter":{
+              "layout": "US",
+              "keys": "Membran",
+              "connection": "Wireless",
+              "rgb": "NO",
+              "flow": "work"
+            }
+  },
+  
+     "3" :{
+    "type": "Keyboard",
+    "model": "Hyper X",
+    "price": "100€",
+    "filter":{
+              "layout": "PT",
+              "keys": "Mechanic",
+              "connection": "wireless",
+              "rgb": "Yes",
+              "flow":"work"
+            }
+  },
+  
+     "4" :{
+    "type": "Keyboard",
+    "model": "msi gamming",
+    "price": "45€",
+    "filter":{
+              "layout": "PT",
+              "keys": "Mechanic",
+              "connection": "Cable",
+              "rgb": "Yes",
+              "flow": "gaming"
+            }
+  },
+  
+     "5" :{
+    "type": "Keyboard",
+    "model": "msi gamming",
+    "price": "70€",
+    "filter":{
+              "layout": "PT",
+              "keys": "Mechanic",
+              "connection": "Cable",
+              "rgb": "Yes",
+              "flow":"gaming"
+            }
+  },
+  
+     "6" :{
+    "type": "Keyboard",
+    "model": "Logitech",
+    "price": "50€",
+    "filter":{
+              "layout": "PT",
+              "keys": "Mechanic",
+              "connection": "Cable",
+              "rgb": "Yes",
+              "flow":"Code"
+            }
+     }
+}

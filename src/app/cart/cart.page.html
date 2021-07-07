@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar style="height: 74px">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card>
+      <img src="https://static.pcdiga.com/media/catalog/product/cache/7800e686cb8ccc75494e29411e232323/p/r/product-p012064-24371.jpg">
+      <ion-label style="font-size: 20px;">
+          Keyboard msi
+      </ion-label>
+      <ion-label style="font-size: 25px; float: right">
+        19,90 €
+    </ion-label>
+      <ion-button (click)="remove()"  expand="block" style="float:right; font-size: 15px;">
+        Remove from cart
+      </ion-button>
+    </ion-card>
+
+  </ion-list>
+
+
+  <ion-item>
+
+    <div style=" width: 100%; height: 50px; color: rgb(21, 101, 192); display:flex;  border-bottom: 3px solid  rgb(21, 101, 192); padding-bottom: 5px;">
+      <ion-col>
+          <ion-label style=" font-size: 40px;">
+                Total:
+          </ion-label>
+      </ion-col>
+      <ion-col>
+          <ion-label style=" font-size: 40px; text-align: right;">
+                19.90 €
+          </ion-label>
+      </ion-col>
+    </div>
+</ion-item>
+  <ion-button (click)="payment()" type="button" style="background-color: rgb(21, 101, 192); color:white; font-size: 25px; height: 40px;  position: fixed;
+    left: 0;
+    bottom: 90px;
+    right: 0;" expand="block">
+    <ion-icon style="color:white; padding-right: 10px; font-size: 25px;" name="cart-outline" ></ion-icon>
+      Purchase
+  </ion-button>
+</ion-content>

@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-toolbar style="height: 74px">
+    <ion-title>search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col>
+      <ion-button (click)="menuFilters()" style="--box-shadow: none; height: 30px; width: auto; margin-top: 5px; ">
+        <ion-icon name="menu-outline"  style="font-size: 30px;"></ion-icon> Filters
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col *ngFor="let produto of produtos | keyvalue">
+      <ion-card class="card">
+        <ion-card-header style="position: relative;">
+          <ion-icon
+            name="heart-outline"
+            style="color: red; size: 20px; right: 10px; position: absolute; z-index: 9;"
+            size="large"
+          ></ion-icon>
+        </ion-card-header>
+
+        <ion-card-content style="text-align: center;">
+          <img src="https://static.pcdiga.com/media/catalog/product/cache/7800e686cb8ccc75494e29411e232323/p/r/product-p012064-24371.jpg">
+           {{produto.value.type}} <br>
+           {{produto.value.model}}<br>
+           Price {{produto.value.price}}
+           <ion-button type="button" style="background-color: rgb(21, 101, 192); color:white;" (click)="verProduto('produto',produto.key)"
+           >See more</ion-button>
+          </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-menu side="start" menuId="menuFilters" contentId="main">
+
+    <ion-content>
+      <ion-toolbar>
+        <ion-title style="color: rgb(21, 101, 192)">Filters</ion-title>
+        <ion-buttons slot="primary">
+          <div (click)="closemenu()">
+            <ion-icon slot="end" color="primary" size="large" name="close-outline"></ion-icon>
+          </div>
+        </ion-buttons>
+      </ion-toolbar>
+
+
+
+      <ion-item style="color: rgb(21, 101, 192)">
+        <ion-range min="0" max="500" id="dual-range" dual-knobs pin color="primary">
+          <ion-text slot="start">0 €</ion-text>
+          <ion-text slot="end"> 500 €</ion-text>
+        </ion-range>
+      </ion-item>
+
+      <ion-item style="color: rgb(21, 101, 192)">
+        <ion-label>Model:</ion-label>
+        <ion-select>
+          <ion-select-option value="brown">MSI</ion-select-option>
+          <ion-select-option value="blonde">Asus</ion-select-option>
+          <ion-select-option value="black">HyperX</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item style="color: rgb(21, 101, 192)">
+        <ion-label>Purpose:</ion-label>
+        <ion-select>
+          <ion-select-option value="brown">Work</ion-select-option>
+          <ion-select-option value="blonde">Gaming</ion-select-option>
+          <ion-select-option value="black">Typing</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item style="color: rgb(21, 101, 192)">
+        <ion-label>Keys:</ion-label>
+        <ion-select>
+          <ion-select-option value="brown">Membrane</ion-select-option>
+          <ion-select-option value="blonde">Mechanical</ion-select-option>
+          <ion-select-option value="black">Hybrid</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item style="color: rgb(21, 101, 192)">
+        <ion-label>Connection:</ion-label>
+        <ion-select>
+          <ion-select-option value="brown">Cable</ion-select-option>
+          <ion-select-option value="blonde">Wireless</ion-select-option>
+          <ion-select-option value="black">Bluetooth</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-grid style="color: rgb(21, 101, 192);">
+        <ion-row>
+          <ion-col col-6>
+            <ion-button color="primary"  expand="block"  (click)='reset()'> Reset </ion-button>
+          </ion-col>
+          <ion-col col-6>
+            <ion-button  color="primary"  expand="block" (click)='filter()' > Apply </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-content>
+  </ion-menu>
+</ion-content>

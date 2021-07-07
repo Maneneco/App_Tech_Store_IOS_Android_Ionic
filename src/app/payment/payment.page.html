@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar style="height: 74px">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-card style="margin: 30px;">
+    <img style="padding: 40px;" src="../../assets/img/paypal.png" />
+    <ion-card-header>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button type="button" style="background-color: rgb(21, 101, 192); color:white;" expand="block" (click)="buydone()"
+      >Pay with PayPal</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin: 30px;">
+    <img style="padding: 40px;" src="../../assets/img/mbway.jpg" />
+    <ion-card-header>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button type="button" style="background-color: rgb(21, 101, 192); color:white;" expand="block" (click)="buydone()"
+      >Pay with MBway</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin: 30px;">
+    <img style="padding: 40px; " src="../../assets/img/multibanco.jpg" />
+    <ion-card-header>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button slot="center" type="button" style="background-color: rgb(21, 101, 192); color:white;" expand="block" (click)="buydone()"
+      >Pay with Credit Card</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
